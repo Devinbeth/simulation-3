@@ -48,8 +48,8 @@ passport.deserializeUser((id, done) => {
 
 app.get('/auth', passport.authenticate('auth0'));
 app.get('/auth/callback', passport.authenticate('auth0', {
-    successRedirect: '/dashboard',
-    failueRedirect: '/'
+    successRedirect: 'http://localhost:3000/#/dashboard',
+    failueRedirect: 'http:localhost:3000/'
 }));
 app.get('/auth/me', (req, res) => {
     if (req.user) {
@@ -61,7 +61,8 @@ app.get('/auth/me', (req, res) => {
 });
 app.get('/auth/logout', (req, res) => {
     req.logOut();
-    res.redirect('/');
+    req.session.destroy();
+    res.redirect('http://localhost:3000/');
 })
 
 app.listen(SERVER_PORT, () => console.log(`Server listening on port: ${SERVER_PORT}`));
