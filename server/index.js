@@ -56,7 +56,7 @@ app.get('/auth/me', (req, res) => {
         res.status(200).send(req.user);
     }
     else {
-        res.status(401).send('Nice try suckaaaaaa!!!!!!');
+        res.status(401).send('YOU SHALL NOT PASS!!!!!!');
     }
 });
 app.get('/auth/logout', (req, res) => {
