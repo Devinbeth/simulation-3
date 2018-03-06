@@ -15,7 +15,7 @@ export default class Dashboard extends Component {
                     <img src={home} alt='' />
                     <img src={search} alt='' />
                     <h1>Dashboard</h1>
-                    <a href={ process.env.REACT_APP_LOGOUT }><button>Logout</button></a>
+                    <a href={ process.env.REACT_APP_LOGOUT }><div>Logout</div></a>
                 </header>
             </div> 
         )
